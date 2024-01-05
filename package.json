@@ -1,0 +1,51 @@
+{
+	"name": "Saashtra-Hack-23",
+	"version": "1.0.0",
+	"description": "Server for Hack",
+	"main": "/dist/server.js",
+	"scripts": {
+		"start": "node dist/server.js",
+		"compile": "tsc && node dist/server.js",
+		"build": "tsc",
+		"dev": "nodemon -e .ts --exec \"yarn compile\"",
+		"lint": "eslint --ext .js,.ts .",
+		"format": "prettier --ignore-path .gitignore --write \"**/*.+(js|ts|json)\""
+	},
+	"lint-staged": {
+		"*.{ts,tsx}": [
+			"yarn format",
+			"yarn lint"
+		]
+	},
+	"author": "Delta Force",
+	"license": "MIT",
+	"dependencies": {
+		"@aries-framework/anoncreds": "0.4.0",
+		"@aries-framework/anoncreds-rs": "0.4.0",
+		"@aries-framework/askar": "0.4.0",
+		"@aries-framework/core": "0.4.0",
+		"@aries-framework/indy-vdr": "0.4.0",
+		"@aries-framework/node": "0.4.0",
+		"@hyperledger/anoncreds-nodejs": "0.1.0",
+		"@hyperledger/aries-askar-nodejs": "0.1.0",
+		"@hyperledger/indy-vdr-nodejs": "0.1.0",
+		"@fastify/cookie": "^9.2.0",
+		"@fastify/cors": "^8.5.0",
+		"dotenv": "^16.0.3",
+		"fastify": "^4.15.0",
+		"mongoose": "^7.0.3"
+	},
+	"devDependencies": {
+		"@types/node": "^18.15.11",
+		"@typescript-eslint/eslint-plugin": "^5.57.0",
+		"@typescript-eslint/parser": "^5.57.0",
+		"eslint": "^8.37.0",
+		"eslint-config-prettier": "^8.8.0",
+		"husky": "^8.0.0",
+		"lint-staged": "^13.2.0",
+		"nodemon": "^2.0.22",
+		"pino-pretty": "^10.0.0",
+		"prettier": "^2.8.7",
+		"typescript": "^5.0.3"
+	}
+}
